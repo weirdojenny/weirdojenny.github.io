@@ -1,13 +1,16 @@
 body {
-    background-color: lightblue;
-  }
-  
-  h1 {
-    color: white;
+    background-color: DB7093;
+}
+h1 {
+    font-family: Marker Felt, fantasy;
+    color: 660033;
     text-align: center;
-  }
-  
-  p {
-    font-family: verdana;
-    font-size: 20px;
-  }
+}
+h2 {
+    font-family: Bradley Hand, cursive;
+    text-align: center;
+}
+p1 {
+    font-family: Courier New, monospace;
+    text-align: center;
+}
