@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css" />
-    <title>My KSU Journey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style.css" />
+
+#Home {background-color: Sangria;}
+#About {background-color: Sangria;}
+#Contact {background-color: Sangria;}
+</style>
 </head>
 <body>
-    <div class="topnavigation">
-        <!--this is the top bar for accessing all the pages-->
-        <a class="active" href="./index.html">My KSU Journey!</a> <!--this is the home button-->
-        <a href="./About.html">All About Me</a><!--this is the all about me page-->
-        <a href="./contactpage.html">Contact Me!</a><!--this is the contact me page/form-->
-    </div>
-        <h1>Welcome to my journey at KSU!</h1>
-        <p>Hello! My name is Jennifer Reyes, but I go by Jenny. I am a senior at Kennesaw State Univerity pursuing a Bachelors of Science in Cybersecurity.</p>
-        <a href="./About.html"><h3>Click here to learn about me!</h2></a><!--another button for all about me page-->
-        <a href="./contactpage.html"><h3>Click here to contact me!</h2></a><!-- this is another button for the contact page/button-->
+
+<button class="tablink" onclick="openPage('Home', this, 'Sangria')">Home</button>
+<button class="tablink" onclick="openPage('All About Me!', this, 'Sangria')">About</button>
+<button class="tablink" onclick="openPage('Contact Me!', this, 'Sangria')">Contactpage</button>
+
+
+<div id="Home" class="tabcontent">
+  <h3>My KSU Journey!</h3>
+  <p>Hello! My name is Jennifer Reyes, but I go by Jenny. I am a senior at Kennesaw State Univerity pursuing a Bachelor of Science in Cybersecurity.</p></p>
+    <a href="./About.html"><h3>Click here to learn about me!</h2></a><!--another button for all about me page-->
+    <a href="./contactpage.html"><h3>Click here to contact me!</h2></a><!-- this is another button for the contact page/button-->
+</div>
+
+<div id="All About Me!" class="tabcontent">
+    <a href="./About.html">All About Me</a><!--this is the all about me page-->
+</div>
+
+<div id="Contact Me!" class="tabcontent">
+    <a href="./contactpage.html">Contact Me!</a><!--this is the contact me page/form-->
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 
+
+
