@@ -1,22 +1,20 @@
-body {
-    background-color: 000000;
-}
-h1 {
+body {background-color: pink;}
+h {
     font-family: Marker Felt, fantasy;
     color: 000000;
     text-align: center;
-}
-h2 {
-    font-family: Bradley Hand, cursive;
-    text-align: center;
-    color: 000000;
+    font-size: 300%;
 }
 p1 {
     font-family: Courier New, monospace;
     text-align: center;
     color: 000000;
-}
-p {
+    font-size: 160%;
     border: 2px solid pink;
     padding: 30px;
+p.thick {
+    font-weight: bold;
+}
+p.normal {
+  font-weight: normal;
 }
