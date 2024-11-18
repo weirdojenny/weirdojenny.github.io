@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="style.css" />
-
-</style>
- * {box-sizing: border-box}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
@@ -55,44 +53,43 @@ body {font-family: "Lato", sans-serif;}
 </head>
 <body>
 
+<h2>Vertical Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
 
-<button class="tablink" onclick="openPage('Home', this, 'pink')">Home</button>
-<button class="tablink" onclick="openPage('All About Me!', this, 'pink')">All About Me!</button>
-<button class="tablink" onclick="openPage('Contact Me!', this, 'pink')">Contact Me!</button>
-
-
-<div id="Home" class="tabcontent">
-  <h3>My KSU Journey!</h3>
-  <p>Hello! My name is Jennifer Reyes, but I go by Jenny. I am a senior at Kennesaw State Univerity pursuing a Bachelor of Science in Cybersecurity.</p></p>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 </div>
 
-<div id="All About Me!" class="tabcontent">
-    <h1>A little bit about me!</h1>
-    <h2>BACKGROUND</h2>
-    <p1>I am a Mexican-American first-generation student here at Kennesaw State. My parents grew up in San Luis Potosi, Mexico, and moved to Georgia before I was born. I was born on September 14th, 2001 in Lawrenceville, GA. I have 3 half sisters and 1 half brother. I have lived in Georgia my whole life, but have moved to Cobb County as I entered KSU. Currently, I attend Kennesaw State University as a Cybersecurity Major after changing my major 3 times. I have a lovely family including my partner, Omar, and my beautiful 1-year-old, Omar Jr.. </p1>
-    <h2>EXPERIENCES</h2>
-    <p2>Through my college and work careers, I've gained much experience, but I have yet to learn more about the cybersecurity field. I am proficient in both English and Spanish, in the aspects of reading, writing, and speaking. I have gained knowledge in Python, JavaScript, HTML, and Terraform programming languages. I also have knowledge in Solidworks. I have plenty of skills that make me a good team player, such as desicion-making, promblem solving, and leadership. I am always enjoying to learn more about anything, which make my work ethic above the standard. </p2>
-    <h2>GOALS</h2>
-    <p3>My main goal is to obtain a Cybersecurity internship for the summer before graduating in the Spring of 2026. Another goal is to get a higher-paying job hopefully somewhere where I can start my career in the cybersecurity field. </p3>
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
 </div>
 
-<div id="Contact Me!" class="tabcontent">
-    <!--make javascript for contact me page-->
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
 </div>
 
 <script>
-function openPage(pageName,elmnt,color) {
+function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablink");
+  tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
 
 // Get the element with id="defaultOpen" and click on it
@@ -101,5 +98,3 @@ document.getElementById("defaultOpen").click();
    
 </body>
 </html> 
-
-
