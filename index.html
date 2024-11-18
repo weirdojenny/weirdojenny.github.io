@@ -57,6 +57,17 @@ body, html {
     max-width: 500px;
     margin: 30px auto;
 }
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-input {
+    display: block;
+}
+
+.form-error {
+    color: red;
+}
 #Home {background-color: red;}
 #News {background-color: green;}
 #Contact {background-color: blue;}
@@ -87,6 +98,29 @@ body, html {
   <h3>Contact Me!</h3>
   <p>Get in touch, or swing by for a cup of coffee.</p>
 </div>
+
+<div id="popup-form-container" style="display:none;">
+  <form id="contact-form" method="POST" action="sendmail.php">
+  <div class="form-row form-error" style="display:none;"></div>
+  <div class="form-row">
+    <label for="contact-form-name">Name:</label>
+    <input id="contact-form-name" class="form-input" type="text" name="name" required>
+  </div>
+  <div class="form-row">
+    <label for="contact-form-email">Email:</label>
+    <input id="contact-form-email" class="form-input" type="email" name="email" required>
+  </div>
+  <div class="form-row">
+    <label for="contact-form-phone">Phone:</label>
+    <input id="contact-form-phone" class="form-input" type="tel" name="phone">
+  </div>
+  <div class="form-row">
+    <label for="contact-form-message">Message:</label>
+    <textarea id="contact-form-message" class="form-input" name="message" required></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+</div>
   
 <script>
 function openPage(pageName,elmnt,color) {
@@ -108,26 +142,13 @@ document.getElementById("defaultOpen").click();
 </script>
 
 <script>
-  <form id="contact-form" method="POST" action="sendmail.php">
-    <div class="form-row form-error" style="display:none;"></div>
-    <div class="form-row">
-      <label for="contact-form-name">Name:</label>
-      <input id="contact-form-name" class="form-input" type="text" name="name" required>
-    </div>
-    <div class="form-row">
-      <label for="contact-form-email">Email:</label>
-      <input id="contact-form-email" class="form-input" type="email" name="email" required>
-    </div>
-    <div class="form-row">
-      <label for="contact-form-phone">Phone:</label>
-      <input id="contact-form-phone" class="form-input" type="tel" name="phone">
-    </div>
-    <div class="form-row">
-      <label for="contact-form-message">Message:</label>
-      <textarea id="contact-form-message" class="form-input" name="message" required></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+  function showPopupForm() {
+  document.getElementById("popup-form-container").style.display = "block";
+}
+
+function hidePopupForm() {
+  document.getElementById("popup-form-container").style.display = "none";
+}
 </script>
 </body>
 </html>
